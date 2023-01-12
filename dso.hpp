@@ -1,18 +1,8 @@
-#include <iostream>
+#define VIS_DEFAULT __attribute__(( visibility("default") ))
 
-namespace Namespace _GLIBCXX_VISIBILITY(default)
+namespace Dso
 {
-    class Class
-    {
-    public:
-        template <typename T>
-        Class(const T & t)
-        {
-            std::cout << t << std::endl;
-        }
-    };
-
-    Class make_an_instance();
+    VIS_DEFAULT void DoSomething();
 }
 
 // vim: set et sw=4 sts=4:

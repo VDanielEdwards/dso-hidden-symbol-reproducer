@@ -1,10 +1,14 @@
 #include "dso.hpp"
+#include "detail.hpp"
 
-namespace Namespace _GLIBCXX_VISIBILITY(default)
+#include <iostream>
+
+namespace Namespace
 {
-    Class make_an_instance()
+    void DoSomething()
     {
-        return Class{"an instance"};
+        auto error_code = Detail::ReallyDoSomething();
+        std::cout << "Error " << error_code << " from " << error_code.category().name() << '\n';
     }
 }
 
